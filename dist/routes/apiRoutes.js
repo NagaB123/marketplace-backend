@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.apiRouter = void 0;
+const express_1 = require("express");
+const apiController_1 = require("../controllers/apiController");
+const apiRouter = (0, express_1.Router)();
+exports.apiRouter = apiRouter;
+apiRouter.post("/auth/login", apiController_1.login);
+apiRouter.get("/products", apiController_1.listProducts);
+apiRouter.get("/products/search", apiController_1.searchProducts);
+apiRouter.get("/categories", apiController_1.listCategories);
+apiRouter.get("/products/categories", apiController_1.listCategories);
+apiRouter.get("/products/category/:category", apiController_1.listProductsByCategory);
+apiRouter.get("/products/:id", apiController_1.getProductDetails);
+apiRouter.post("/enquiries", apiController_1.submitEnquiry);
